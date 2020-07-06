@@ -15,8 +15,8 @@ class CreateArtikelsTable extends Migration
     {
         Schema::create('artikels', function (Blueprint $table) {
             $table->bigIncrements('artikel_id');
-            $table->bigInteger('pengguna_id')->unsigned();
-            $table->date('tgl_dibuat');
+            $table->bigInteger('pengguna_id')->unsigned()->nullable();
+            $table->timestamp('tgl_dibuat',0);
             $table->string('judul',50);
             $table->text('isi');
             $table->string('slug',255);
